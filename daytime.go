@@ -35,7 +35,6 @@ func main() {
 
 // daytime writes a date to the connection. No big deal.
 func daytime(c io.WriteCloser) {
-	defer c.Close()
 	s := fmt.Sprintf("%s\n", time.Now())
 	c.Write([]byte(s))
 	c.Close()
